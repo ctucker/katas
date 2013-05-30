@@ -12,6 +12,7 @@
 
 	<modules>
 		<module>../fizzbuzz</module>
+		<module>../romannumerals</module>
 	</modules>
 
 	<dependencies>
