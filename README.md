@@ -1,4 +1,0 @@
-fizzbuzz
-========
-
-Fizzbuzz example
