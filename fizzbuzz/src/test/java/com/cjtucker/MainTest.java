@@ -41,6 +41,12 @@ public class MainTest {
 		assertThat(allLines, hasSize(100));
 	}
 
+	@Test
+	public void shouldPrint100OnTheLastLine() {
+		List<String> allLines = runAndCaptureOutputLines();
+		assertThat(allLines.get(99), is(equalTo("100")));
+	}
+
 	private List<String> runAndCaptureOutputLines() {
 		Main.main(new String[] {});
 		String output = stdoutBuffer.toString();
