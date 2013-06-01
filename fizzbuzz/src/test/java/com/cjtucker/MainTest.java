@@ -42,9 +42,9 @@ public class MainTest {
 	}
 
 	@Test
-	public void shouldPrint100OnTheLastLine() {
+	public void shouldPrintBuzzOnTheLastLine() {
 		List<String> allLines = runAndCaptureOutputLines();
-		assertThat(allLines.get(indexForLine(100)), is(equalTo("100")));
+		assertThat(allLines.get(indexForLine(100)), is(equalTo("BUZZ")));
 	}
 
 	@Test
