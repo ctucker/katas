@@ -4,7 +4,7 @@ public class FizzBuzzCalculator {
 
 	public static final String FIZZ = "FIZZ";
 	public static final String BUZZ = "BUZZ";
-	public static final String FIZZBUZZ = "FIZZBUZZ";
+	public static final String FIZZBUZZ = FIZZ + BUZZ;
 
 	public String fizzBuzz(int i) {
 		String output = String.valueOf(i);
