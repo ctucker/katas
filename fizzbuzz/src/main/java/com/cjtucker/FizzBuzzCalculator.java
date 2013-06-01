@@ -10,6 +10,9 @@ public class FizzBuzzCalculator {
 		if (i % 5 == 0) {
 			output = "BUZZ";
 		}
+		if (i % 3 == 0 && i % 5 == 0) {
+			output = "FIZZBUZZ";
+		}
 		return output;
 	}
 
