@@ -32,7 +32,7 @@ public class MainTest {
 	@Test
 	public void shouldPrint1OnTheFirstLine() {
 		List<String> allLines = runAndCaptureOutputLines();
-		assertThat(allLines.get(0), is(equalTo("1")));
+		assertThat(allLines.get(indexForLine(1)), is(equalTo("1")));
 	}
 
 	@Test
@@ -44,19 +44,23 @@ public class MainTest {
 	@Test
 	public void shouldPrint100OnTheLastLine() {
 		List<String> allLines = runAndCaptureOutputLines();
-		assertThat(allLines.get(99), is(equalTo("100")));
+		assertThat(allLines.get(indexForLine(100)), is(equalTo("100")));
 	}
 
 	@Test
 	public void shouldPrintFizzOnTheThirdLine() {
 		List<String> allLines = runAndCaptureOutputLines();
-		assertThat(allLines.get(2), is(equalTo("FIZZ")));
+		assertThat(allLines.get(indexForLine(3)), is(equalTo("FIZZ")));
 	}
 
 	private List<String> runAndCaptureOutputLines() {
 		Main.main(new String[] {});
 		String output = stdoutBuffer.toString();
 		return Arrays.asList(output.split(System.getProperty("line.separator")));
+	}
+
+	private int indexForLine(int lineNumber) {
+		return lineNumber - 1;
 	}
 
 }
