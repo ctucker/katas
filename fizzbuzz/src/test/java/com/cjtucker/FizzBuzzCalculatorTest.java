@@ -47,5 +47,9 @@ public class FizzBuzzCalculatorTest {
 		assertThat(fizzBuzzCalculator.fizzBuzz(15), is(equalTo(FIZZBUZZ)));
 	}
 
+	@Test
+	public void shouldReturnFizzBuzzForDifferentMultipleOf3And5() {
+		assertThat(fizzBuzzCalculator.fizzBuzz(90), is(equalTo(FIZZBUZZ)));
+	}
 
 }
