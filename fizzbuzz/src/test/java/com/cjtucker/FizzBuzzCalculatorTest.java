@@ -9,11 +9,19 @@ import static org.hamcrest.Matchers.is;
 
 public class FizzBuzzCalculatorTest {
 
+	public static final String BUZZ = "BUZZ";
+	private static final String FIZZ = "FIZZ";
+
 	private FizzBuzzCalculator fizzBuzzCalculator;
 
 	@Before
 	public void setUp() throws Exception {
 		fizzBuzzCalculator = new FizzBuzzCalculator();
+	}
+
+	@Test
+	public void fizzBuzzOf3IsFizz() {
+		assertThat(fizzBuzzCalculator.fizzBuzz(3), is(equalTo(FIZZ)));
 	}
 
 	@Test
@@ -23,7 +31,7 @@ public class FizzBuzzCalculatorTest {
 
 	@Test
 	public void fizzBuzzOf5IsBuzz() {
-		assertThat(fizzBuzzCalculator.fizzBuzz(5), is(equalTo("BUZZ")));
+		assertThat(fizzBuzzCalculator.fizzBuzz(5), is(equalTo(BUZZ)));
 	}
 
 }
