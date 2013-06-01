@@ -20,27 +20,27 @@ public class FizzBuzzCalculatorTest {
 	}
 
 	@Test
-	public void fizzBuzzOf3IsFizz() {
+	public void shouldReturnFizzFor3() {
 		assertThat(fizzBuzzCalculator.fizzBuzz(3), is(equalTo(FIZZ)));
 	}
 
 	@Test
-	public void fizzBuzzOf4Is4() {
+	public void shouldReturn4For4() {
 		assertThat(fizzBuzzCalculator.fizzBuzz(4), is(equalTo("4")));
 	}
 
 	@Test
-	public void fizzBuzzOf5IsBuzz() {
+	public void shouldReturnBuzzFor5() {
 		assertThat(fizzBuzzCalculator.fizzBuzz(5), is(equalTo(BUZZ)));
 	}
 
 	@Test
-	public void fizzBuzzOfDifferentMultipleOf3IsFizz() {
+	public void shouldReturnFizzForDifferentMultipleOf3() {
 		assertThat(fizzBuzzCalculator.fizzBuzz(9), is(equalTo(FIZZ)));
 	}
 
 	@Test
-	public void fizzBuzzOfDifferentMultipleOf5IsBuzz() {
+	public void shouldReturnBuzzForDifferentMultipleOf5() {
 		assertThat(fizzBuzzCalculator.fizzBuzz(20), is(equalTo(BUZZ)));
 	}
 
