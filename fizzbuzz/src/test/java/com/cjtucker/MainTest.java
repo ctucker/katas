@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.cjtucker.FizzBuzzCalculator.BUZZ;
+import static com.cjtucker.FizzBuzzCalculator.FIZZ;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -44,13 +46,13 @@ public class MainTest {
 	@Test
 	public void shouldPrintBuzzOnTheLastLine() {
 		List<String> allLines = runAndCaptureOutputLines();
-		assertThat(allLines.get(indexForLine(100)), is(equalTo("BUZZ")));
+		assertThat(allLines.get(indexForLine(100)), is(equalTo(BUZZ)));
 	}
 
 	@Test
 	public void shouldPrintFizzOnTheThirdLine() {
 		List<String> allLines = runAndCaptureOutputLines();
-		assertThat(allLines.get(indexForLine(3)), is(equalTo("FIZZ")));
+		assertThat(allLines.get(indexForLine(3)), is(equalTo(FIZZ)));
 	}
 
 	private List<String> runAndCaptureOutputLines() {

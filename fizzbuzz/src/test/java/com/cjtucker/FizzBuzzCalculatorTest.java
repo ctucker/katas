@@ -3,15 +3,12 @@ package com.cjtucker;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.cjtucker.FizzBuzzCalculator.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class FizzBuzzCalculatorTest {
-
-	public static final String BUZZ = "BUZZ";
-	private static final String FIZZ = "FIZZ";
-	private static final String FIZZBUZZ = "FIZZBUZZ";
 
 	private FizzBuzzCalculator fizzBuzzCalculator;
 
