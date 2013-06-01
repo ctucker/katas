@@ -47,6 +47,12 @@ public class MainTest {
 		assertThat(allLines.get(99), is(equalTo("100")));
 	}
 
+	@Test
+	public void shouldPrintFizzOnTheThirdLine() {
+		List<String> allLines = runAndCaptureOutputLines();
+		assertThat(allLines.get(2), is(equalTo("FIZZ")));
+	}
+
 	private List<String> runAndCaptureOutputLines() {
 		Main.main(new String[] {});
 		String output = stdoutBuffer.toString();
