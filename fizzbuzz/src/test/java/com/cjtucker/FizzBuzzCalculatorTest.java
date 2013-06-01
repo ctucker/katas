@@ -34,4 +34,10 @@ public class FizzBuzzCalculatorTest {
 		assertThat(fizzBuzzCalculator.fizzBuzz(5), is(equalTo(BUZZ)));
 	}
 
+	@Test
+	public void fizzBuzzOfDifferentMultipleOf3IsFizz() {
+		assertThat(fizzBuzzCalculator.fizzBuzz(9), is(equalTo(FIZZ)));
+	}
+
+
 }
