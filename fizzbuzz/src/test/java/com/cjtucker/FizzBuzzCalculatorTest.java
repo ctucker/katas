@@ -11,6 +11,7 @@ public class FizzBuzzCalculatorTest {
 
 	public static final String BUZZ = "BUZZ";
 	private static final String FIZZ = "FIZZ";
+	private static final String FIZZBUZZ = "FIZZBUZZ";
 
 	private FizzBuzzCalculator fizzBuzzCalculator;
 
@@ -42,6 +43,11 @@ public class FizzBuzzCalculatorTest {
 	@Test
 	public void shouldReturnBuzzForDifferentMultipleOf5() {
 		assertThat(fizzBuzzCalculator.fizzBuzz(20), is(equalTo(BUZZ)));
+	}
+
+	@Test
+	public void shouldReturnFizzBuzzForMultipleOf3And5() {
+		assertThat(fizzBuzzCalculator.fizzBuzz(15), is(equalTo(FIZZBUZZ)));
 	}
 
 
