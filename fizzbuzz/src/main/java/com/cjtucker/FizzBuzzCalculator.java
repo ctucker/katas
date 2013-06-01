@@ -7,7 +7,7 @@ public class FizzBuzzCalculator {
 		if (i % 3 == 0) {
 			output = "FIZZ";
 		}
-		if (i == 5) {
+		if (i % 5 == 0) {
 			output = "BUZZ";
 		}
 		return output;
