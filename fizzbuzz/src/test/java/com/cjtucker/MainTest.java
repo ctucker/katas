@@ -3,14 +3,16 @@ package com.cjtucker;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.cjtucker.FizzBuzzCalculator.BUZZ;
+import static com.cjtucker.FizzBuzzCalculator.FIZZ;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.startsWith;
+import static org.hamcrest.Matchers.*;
 
 public class MainTest {
 
@@ -31,20 +33,36 @@ public class MainTest {
 
 	@Test
 	public void shouldPrint1OnTheFirstLine() {
-
-		Main.main(new String[] {});
-
-		String output = stdoutBuffer.toString();
-		assertThat(output, startsWith("1\n"));
+		List<String> allLines = runAndCaptureOutputLines();
+		assertThat(allLines.get(indexForLine(1)), is(equalTo("1")));
 	}
 
 	@Test
 	public void shouldPrintOneHundredTotalLines() {
-		Main.main(new String[] {});
+		List<String> allLines = runAndCaptureOutputLines();
+		assertThat(allLines, hasSize(100));
+	}
 
+	@Test
+	public void shouldPrintBuzzOnTheLastLine() {
+		List<String> allLines = runAndCaptureOutputLines();
+		assertThat(allLines.get(indexForLine(100)), is(equalTo(BUZZ)));
+	}
+
+	@Test
+	public void shouldPrintFizzOnTheThirdLine() {
+		List<String> allLines = runAndCaptureOutputLines();
+		assertThat(allLines.get(indexForLine(3)), is(equalTo(FIZZ)));
+	}
+
+	private List<String> runAndCaptureOutputLines() {
+		Main.main(new String[] {});
 		String output = stdoutBuffer.toString();
-		String[] allLines = output.split(System.getProperty("line.separator"));
-		assertThat(Arrays.asList(allLines), hasSize(100));
+		return Arrays.asList(output.split(System.getProperty("line.separator")));
+	}
+
+	private int indexForLine(int lineNumber) {
+		return lineNumber - 1;
 	}
 
 }
